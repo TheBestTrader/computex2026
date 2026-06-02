@@ -421,7 +421,7 @@ with st.sidebar:
                 "💾 下載 JSON",
                 data=b'\xef\xbb\xbf' + st.session_state["_export"].encode("utf-8"),
                 file_name=fname,
-                mime="application/json; charset=utf-8",
+                mime="application/octet-stream",
                 use_container_width=True,
             )
 
