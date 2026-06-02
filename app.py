@@ -418,12 +418,17 @@ with st.sidebar:
         if "_export" in st.session_state:
             fname = f"computex2026_{datetime.now().strftime('%Y%m%d_%H%M')}.json"
             st.download_button(
-                "💾 下載 JSON",
+                "💾 下載 JSON（電腦用）",
                 data=b'\xef\xbb\xbf' + st.session_state["_export"].encode("utf-8"),
                 file_name=fname,
                 mime="application/octet-stream",
                 use_container_width=True,
             )
+            st.caption("📱 iPad 請長按下方文字框 → 全選 → 複製，貼到備忘錄儲存")
+            st.text_area("JSON 內容（全選複製）",
+                         value=st.session_state["_export"],
+                         height=200,
+                         key="_export_ta")
 
 # ── 過濾 ─────────────────────────────────────────────────────────────────────
 def match(v):
