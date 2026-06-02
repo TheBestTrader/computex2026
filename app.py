@@ -419,9 +419,9 @@ with st.sidebar:
             fname = f"computex2026_{datetime.now().strftime('%Y%m%d_%H%M')}.json"
             st.download_button(
                 "💾 下載 JSON",
-                data=st.session_state["_export"].encode("utf-8"),
+                data=b'\xef\xbb\xbf' + st.session_state["_export"].encode("utf-8"),
                 file_name=fname,
-                mime="application/json",
+                mime="application/json; charset=utf-8",
                 use_container_width=True,
             )
 
