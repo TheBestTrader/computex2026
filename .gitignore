@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# 字型與 PDF 工具（不需上傳）
+kaiu.ttf
+convert_to_pdf.py
+*.pdf
+dashboard_full.png
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS
+.DS_Store
+Thumbs.db
